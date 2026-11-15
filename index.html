@@ -1,67 +1,901 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="LIFORA — Your Life. Your Choice. Discover the LIFORA Android app.">
-<title>LIFORA — Official Website</title>
-<style>
-:root{--bg:#080808;--panel:#151515;--gold:#e8c36a;--gold2:#f7dfa0;--muted:#bbb3a3;--line:#4a3a1c}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#2b210f 0,transparent 32%),var(--bg);color:#fff;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.6}
-.wrap{width:min(1100px,92%);margin:auto}header{position:sticky;top:0;z-index:5;background:#090909eF;border-bottom:1px solid #4a3a1c;backdrop-filter:blur(12px)}
-nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:14px}.logo{font-size:25px;font-weight:900;letter-spacing:4px;color:var(--gold)}
-.links{display:flex;gap:22px;font-size:14px}.links a,footer a{color:#eee4cf;text-decoration:none}
-select{background:#171717;color:var(--gold2);border:1px solid var(--line);border-radius:20px;padding:9px 12px}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:90px 0 75px;min-height:570px}
-.eyebrow{color:var(--gold);letter-spacing:3px;text-transform:uppercase;font-size:12px;font-weight:800}
-h1{font-size:clamp(46px,7vw,76px);line-height:1.04;margin:15px 0;letter-spacing:-2px}h1 span,h2{color:var(--gold2)}
-p{color:var(--muted)}.hero p{font-size:18px;max-width:570px}
-.btn{display:inline-block;background:linear-gradient(135deg,var(--gold2),#c79a3c);color:#17120a;text-decoration:none;padding:13px 22px;border-radius:30px;font-weight:800;margin:10px 8px 0 0}
-.btn.alt{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
-.phone{width:260px;height:440px;margin:auto;border:2px solid #715a2e;border-radius:38px;padding:12px;background:linear-gradient(145deg,#292114,#080808);box-shadow:0 25px 70px #000,0 0 50px #e8c36a22;transform:rotate(3deg)}
-.screen{height:100%;border-radius:28px;background:linear-gradient(160deg,#201c14,#090909);border:1px solid #514020;display:flex;flex-direction:column;align-items:center;text-align:center;padding:25px 15px}
-.mark{width:90px;height:90px;border-radius:28px;background:linear-gradient(145deg,#f8e7b8,#b8872d);display:grid;place-items:center;color:#17120a;font-size:42px;font-weight:900;margin:65px auto 20px}
-section{padding:70px 0}.head{text-align:center;max-width:680px;margin:0 auto 35px}.head h2{font-size:clamp(30px,4vw,43px);margin:8px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(145deg,#191919,#101010);border:1px solid var(--line);border-radius:22px;padding:24px}.card b{color:var(--gold2);font-size:18px}.card p{font-size:14px}
-.download{background:linear-gradient(120deg,#251b0b,#111);border:1px solid var(--line);border-radius:26px;text-align:center;padding:42px 24px}.download h2{font-size:clamp(30px,4vw,42px);margin:0}
-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
-@media(max-width:760px){.links{display:none}.hero{grid-template-columns:1fr;text-align:center;padding:60px 0}.hero p{margin:auto}.phone{height:400px}.grid{grid-template-columns:1fr}.foot{display:block}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08080b" />
+  <meta name="description" content="LIFORA — A premium digital experience designed for everyday simplicity, value, and growth." />
+  <title>LIFORA | Official Website</title>
+  <style>
+    :root{
+      --bg: #08080b;
+      --bg-soft: #111216;
+      --panel: #171a20;
+      --panel-2: #1d2129;
+      --gold: #d7b36a;
+      --gold-soft: #f3d99b;
+      --gold-deep: #a8792d;
+      --pastel-1: #f7d7d4;
+      --pastel-2: #dfeaf9;
+      --pastel-3: #e8f0d5;
+      --text: #f3efe8;
+      --muted: #c4bda8;
+      --line: rgba(215,179,106,0.35);
+      --shadow: rgba(0,0,0,0.45);
+      --success: #7fe3b7;
+      --danger: #ff9f9f;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, rgba(215,179,106,0.18), transparent 30%),
+                  radial-gradient(circle at top left, rgba(247,215,212,0.12), transparent 20%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    ul { padding-left: 1.1rem; }
+
+    .wrap {
+      width: min(1160px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8,8,11,0.82);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.22rem;
+      color: var(--gold-soft);
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #f4e5b1, #b8892f);
+      color: #111;
+      box-shadow: 0 8px 22px rgba(215,179,106,0.28);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+      font-size: 0.94rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: var(--gold-soft); }
+
+    .lang-select {
+      background: rgba(23,26,32,0.8);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--gold-soft);
+      padding: 0.7rem 0.9rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .hero {
+      padding: 4.9rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.18rem;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { margin: 0 0 0.8rem; color: var(--text); line-height: 1.1; }
+    h1 {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      letter-spacing: -0.06em;
+    }
+    h1 .accent { color: var(--gold-soft); }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 620px;
+      margin-bottom: 1.8rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.95rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      color: #17120a;
+      box-shadow: 0 18px 30px rgba(215,179,106,0.25);
+    }
+    .btn-secondary {
+      border-color: rgba(215,179,106,0.5);
+      background: transparent;
+      color: var(--gold-soft);
+    }
+
+    .mini-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      padding-top: 0.5rem;
+    }
+
+    .mini-stat {
+      min-width: 160px;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(17,18,22,0.85);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.16);
+    }
+    .mini-stat strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--gold-soft);
+    }
+    .mini-stat span { color: var(--muted); font-size: 0.9rem; }
+
+    .device-card {
+      position: relative;
+      margin-left: auto;
+      width: min(420px, 100%);
+      padding: 1rem;
+      border-radius: 32px;
+      border: 1px solid rgba(215,179,106,0.55);
+      background: linear-gradient(145deg, rgba(38,35,28,0.75), rgba(8,8,11,0.92));
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 40px rgba(215,179,106,0.12);
+    }
+
+    .device-screen {
+      min-height: 540px;
+      background: linear-gradient(180deg, rgba(15,14,16,0.96), rgba(22,18,11,0.96));
+      border: 1px solid rgba(215,179,106,0.5);
+      border-radius: 26px;
+      padding: 2rem 1.3rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .device-mark {
+      width: 108px;
+      height: 108px;
+      display: grid;
+      place-items: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin: 0 auto 1rem;
+      border-radius: 28px;
+      color: #17120a;
+      background: linear-gradient(135deg, #f9ebb0, #c9983c);
+      box-shadow: 0 18px 40px rgba(215,179,106,0.35);
+    }
+
+    .device-screen h3 {
+      font-size: 2rem;
+      letter-spacing: 0.2rem;
+      color: var(--gold-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    .device-screen p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .pulse-box {
+      margin-top: 1.3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      color: var(--gold-soft);
+      border: 1px solid rgba(215,179,106,0.4);
+      background: rgba(215,179,106,0.06);
+      width: fit-content;
+      margin-inline: auto;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .pulse-dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 0 rgba(127,227,183,0.7);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(127,227,183,0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(127,227,183,0); }
+      100% { box-shadow: 0 0 0 0 rgba(127,227,183,0); }
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-head {
+      max-width: 740px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2.1rem, 3vw, 3.2rem);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      margin: 0;
+    }
+
+    .feature-grid,
+    .grid-3,
+    .grid-2,
+    .steps-grid,
+    .faq-grid,
+    .stats-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card, .info-box {
+      background: linear-gradient(180deg, rgba(25,27,32,0.96), rgba(14,15,18,0.96));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, rgba(247,215,212,0.22), rgba(215,179,106,0.18));
+      border: 1px solid var(--line);
+      color: var(--gold-soft);
+    }
+
+    .card h3 { font-size: 1.4rem; margin-bottom: 0.7rem; }
+    .card p, .info-box p, .mission-box p, .note {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .cta-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 2rem;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(32,24,12,0.68), rgba(18,18,22,0.9));
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .cta-panel h2 {
+      margin-bottom: 0.8rem;
+      font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    .cta-panel p { color: var(--muted); margin: 0; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: flex-end;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 120px;
+      padding: 0.9rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02);
+      color: var(--gold-soft);
+      font-weight: 700;
+    }
+
+    .step-box {
+      padding: 1.3rem;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(17,19,23,0.9);
+    }
+    .step-box .number {
+      display: inline-flex;
+      width: 40px; height: 40px; border-radius: 50%;
+      align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      color: #111;
+      font-weight: 900;
+      margin-bottom: 1rem;
+    }
+
+    .mission-box {
+      padding: 1.7rem;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(19,21,26,1), rgba(14,15,18,0.94));
+    }
+
+    .mission-box h3 { font-size: 1.55rem; }
+
+    .quote {
+      padding: 1.8rem;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(215,179,106,0.08), rgba(247,215,212,0.04));
+      border: 1px solid var(--line);
+    }
+    .quote p { color: var(--text); font-size: 1.06rem; }
+    .quote strong { color: var(--gold-soft); }
+
+    .support-list {
+      margin-top: 1rem;
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 0.8rem;
+    }
+    .support-list li {
+      position: relative;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+    .support-list li::before {
+      content: "•";
+      position: absolute; left: 0; top: 0; color: var(--gold-soft);
+      font-size: 1.2rem;
+    }
+
+    .stats-grid .card {
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    .stats-grid strong {
+      display: block;
+      font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+      color: var(--gold-soft);
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(17,19,23,0.9);
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid rgba(215,179,106,0.3);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      padding: 0.95rem 1rem;
+      font: inherit;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(196,189,168,0.7); }
+    textarea { min-height: 145px; resize: vertical; }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .form-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 3rem;
+      color: var(--muted);
+      background: rgba(8,8,11,0.7);
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--gold-soft); }
+
+    @media (max-width: 900px) {
+      .hero-grid, .cta-panel, .grid-2, .faq-grid, .feature-grid, .grid-3 { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .nav-links { display: none; }
+      .tags { justify-content: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .field-row, .steps-grid, .stats-grid { grid-template-columns: 1fr; }
+      section { padding: 4rem 0; }
+      .hero { padding-top: 3.2rem; }
+      .mini-stats { display: grid; grid-template-columns: 1fr; }
+      .brand { letter-spacing: 0.12rem; }
+      .device-screen { min-height: 460px; }
+    }
+  </style>
 </head>
 <body>
-<header><div class="wrap"><nav>
-<a class="logo" href="#">LIFORA</a>
-<div class="links"><a href="#about" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a><a href="#features" data-en="Features" data-kn="ವೈಶಿಷ್ಟ್ಯಗಳು">Features</a><a href="#download" data-en="Download" data-kn="ಡೌನ್‌ಲೋಡ್">Download</a><a href="#support" data-en="Support" data-kn="ಸಹಾಯ">Support</a></div>
-<select id="lang" aria-label="Language"><option value="en">English</option><option value="kn">ಕನ್ನಡ</option></select>
-</nav></div></header>
-<main>
-<div class="wrap hero" id="about"><div>
-<div class="eyebrow" data-en="A smarter digital experience" data-kn="ಒಂದು ಉತ್ತಮ ಡಿಜಿಟಲ್ ಅನುಭವ">A smarter digital experience</div>
-<h1 data-en-html="Your Life.<br><span>Your Choice.</span>" data-kn-html="ನಿಮ್ಮ ಜೀವನ.<br><span>ನಿಮ್ಮ ಆಯ್ಕೆ.</span>">Your Life.<br><span>Your Choice.</span></h1>
-<p data-en="Welcome to LIFORA — explore a thoughtful digital experience designed to make everyday life simpler." data-kn="LIFORA ಗೆ ಸ್ವಾಗತ — ದೈನಂದಿನ ಜೀವನವನ್ನು ಸರಳಗೊಳಿಸಲು ರೂಪಿಸಿದ ಡಿಜಿಟಲ್ ಅನುಭವವನ್ನು ಅನ್ವೇಷಿಸಿ.">Welcome to LIFORA — explore a thoughtful digital experience designed to make everyday life simpler.</p>
-<a class="btn" href="#download" data-en="Download the App" data-kn="ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ">Download the App</a>
-<a class="btn alt" href="#features" data-en="Explore Features" data-kn="ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ನೋಡಿ">Explore Features</a>
-</div><div class="phone"><div class="screen"><div class="eyebrow">YOUR PERSONAL SPACE</div><div class="mark">L</div><h2 style="margin:0">LIFORA</h2><p data-en="Your Life. Your Choice." data-kn="ನಿಮ್ಮ ಜೀವನ. ನಿಮ್ಮ ಆಯ್ಕೆ.">Your Life. Your Choice.</p><div style="margin-top:auto;color:#d9bd7b;font-size:11px;letter-spacing:2px">A NEW WAY TO EXPERIENCE DIGITAL LIFE</div></div></div></div>
-<section id="features"><div class="wrap"><div class="head"><div class="eyebrow" data-en="Discover" data-kn="ಅನ್ವೇಷಿಸಿ">Discover</div><h2 data-en="Explore LIFORA" data-kn="LIFORA ಅನ್ವೇಷಿಸಿ">Explore LIFORA</h2><p data-en="A clean and welcoming experience, built around simplicity." data-kn="ಸರಳತೆಯನ್ನು ಆಧರಿಸಿದ ಸ್ವಚ್ಛ ಮತ್ತು ಸುಂದರ ಅನುಭವ.">A clean and welcoming experience, built around simplicity.</p></div>
-<div class="grid">
-<div class="card"><b data-en="Simple Experience" data-kn="ಸರಳ ಅನುಭವ">Simple Experience</b><p data-en="An easy-to-understand interface to help you get started." data-kn="ಸುಲಭವಾಗಿ ಬಳಸಲು ಸಹಾಯ ಮಾಡುವ ಸ್ಪಷ್ಟ ವಿನ್ಯಾಸ.">An easy-to-understand interface to help you get started.</p></div>
-<div class="card"><b data-en="Light & Dark Theme" data-kn="ಲೈಟ್ ಮತ್ತು ಡಾರ್ಕ್ ಥೀಮ್">Light & Dark Theme</b><p data-en="Choose the visual theme that feels right for you." data-kn="ನಿಮಗೆ ಇಷ್ಟವಾದ ಥೀಮ್ ಆಯ್ಕೆಮಾಡಿ.">Choose the visual theme that feels right for you.</p></div>
-<div class="card"><b data-en="App Guide" data-kn="ಆ್ಯಪ್ ಮಾರ್ಗದರ್ಶಿ">App Guide</b><p data-en="A guided introduction to help new users explore the app." data-kn="ಹೊಸ ಬಳಕೆದಾರರಿಗೆ ಆ್ಯಪ್ ಪರಿಚಯಿಸುವ ಮಾರ್ಗದರ್ಶನ.">A guided introduction to help new users explore the app.</p></div>
-</div></div></section>
-<section id="download"><div class="wrap"><div class="download"><div class="eyebrow" data-en="Get started" data-kn="ಪ್ರಾರಂಭಿಸಿ">Get started</div><h2 data-en="Take LIFORA with you" data-kn="LIFORA ನಿಮ್ಮೊಂದಿಗೆ ಇರಲಿ">Take LIFORA with you</h2><p data-en="Download the Android app using the button below." data-kn="ಕೆಳಗಿನ ಬಟನ್ ಬಳಸಿ Android ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.">Download the Android app using the button below.</p><a class="btn" href="lifora.apk" download data-en="Download Android APK" data-kn="Android APK ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ">Download Android APK</a></div></div></section>
-<section id="support"><div class="wrap"><div class="head"><div class="eyebrow" data-en="We're here to help" data-kn="ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ನಾವು ಇದ್ದೇವೆ">We're here to help</div><h2 data-en="Need support?" data-kn="ಸಹಾಯ ಬೇಕೇ?">Need support?</h2><p data-en="For app help or enquiries, contact the LIFORA team." data-kn="ಆ್ಯಪ್ ಸಹಾಯ ಅಥವಾ ವಿಚಾರಣೆಗಳಿಗಾಗಿ LIFORA ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ.">For app help or enquiries, contact the LIFORA team.</p><a class="btn" href="https://wa.me/918970240304" target="_blank" rel="noopener" data-en="Contact on WhatsApp" data-kn="WhatsApp ಮೂಲಕ ಸಂಪರ್ಕಿಸಿ">Contact on WhatsApp</a></div></div></section>
-</main>
-<footer><div class="wrap foot"><div>© <span id="year"></span> LIFORA. <span data-en="All rights reserved." data-kn="ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.">All rights reserved.</span></div><div><a href="privacy.html" data-en="Privacy Policy" data-kn="ಗೌಪ್ಯತಾ ನೀತಿ">Privacy Policy</a> · <a href="terms.html" data-en="Terms & Conditions" data-kn="ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು">Terms & Conditions</a></div></div></footer>
-<script>
-const picker=document.getElementById('lang');
-function applyLanguage(l){
- document.documentElement.lang=l;
- document.querySelectorAll('[data-en]').forEach(el=>el.textContent=el.dataset[l==='kn'?'kn':'en']);
- document.querySelectorAll('[data-en-html]').forEach(el=>el.innerHTML=el.dataset[l==='kn'?'knHtml':'enHtml']);
- try{localStorage.setItem('lifora-language',l)}catch(e){}
-}
-let current='en';try{current=localStorage.getItem('lifora-language')||'en'}catch(e){}
-picker.value=current;applyLanguage(current);picker.addEventListener('change',e=>applyLanguage(e.target.value));
-document.getElementById('year').textContent=new Date().getFullYear();
-</script>
-</body></html>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="#top" class="brand" aria-label="LIFORA home">
+          <span class="brand-mark">L</span>
+          <span>LIFORA</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#explore">Explore</a>
+          <a href="#support">Support</a>
+          <a href="#mission">Mission</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <select id="lang" class="lang-select" aria-label="Language selector">
+          <option value="en">English</option>
+          <option value="kn">ಕನ್ನಡ</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid" id="about">
+        <div>
+          <div class="eyebrow" data-en="A smarter digital experience" data-kn="ಒಂದು ಉತ್ತಮ ಡಿಜಿಟಲ್ ಅನುಭವ">A smarter digital experience</div>
+          <h1 data-en-html="Your Life.<br><span class='accent'>Your Choice.</span>" data-kn-html="ನಿಮ್ಮ ಜೀವನ.<br><span class='accent'>ನಿಮ್ಮ ಆಯ್ಕೆ.</span>">Your Life.<br><span class="accent">Your Choice.</span></h1>
+          <p class="lead" data-en="LIFORA brings together meaningful digital experiences, guided simplicity, and a premium lifestyle approach that helps people feel more confident in their everyday decisions." data-kn="LIFORA ಒಂದು ಅರ್ಥಪೂರ್ಣ ಡಿಜಿಟಲ್ ಅನುಭವ, ಸರಳ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ಪ್ರಿಮಿಯಂ Sty le ಆಧಾರಿತ ಪರಿಹಾರಗಳನ್ನು ಒಟ್ಟಿಗೆ ನೀಡುತ್ತದೆ. ಇದು ದೈನಂದಿನ ನಿರ್ಧಾರಗಳನ್ನು ತಿಳುವಳಿಕೆಯುಕ್ತವಾಗಿ ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ತೆಗೆದುಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.">LIFORA brings together meaningful digital experiences, guided simplicity, and a premium lifestyle approach that helps people feel more confident in their everyday decisions.</p>
+
+          <div class="cta-row">
+            <a href="#download" class="btn btn-primary" data-en="Download the App" data-kn="ಆ್ಯಪ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ">Download the App</a>
+            <a href="#explore" class="btn btn-secondary" data-en="Explore Features" data-kn="ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ನೋಡಿ">Explore Features</a>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>10K+</strong>
+              <span data-en="Users goal" data-kn="ಬಳಕೆದಾರರಿಗೆ ಗುರಿ">Users goal</span>
+            </div>
+            <div class="mini-stat">
+              <strong>24/7</strong>
+              <span data-en="Support access" data-kn="ಸಹಾಯ ಲಭ್ಯತೆ">Support access</span>
+            </div>
+            <div class="mini-stat">
+              <strong>100%</strong>
+              <span data-en="User-focused" data-kn="ಬಳಕೆದಾರ ಕೇಂದ್ರೀಕೃತ">User-focused</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="device-card" aria-label="LIFORA app preview">
+          <div class="device-screen">
+            <div class="device-mark">L</div>
+            <div class="eyebrow" style="margin:0 auto 0.6rem; justify-content:center;">Your personal space</div>
+            <h3>LIFORA</h3>
+            <p data-en="Your Life. Your Choice." data-kn="ನಿಮ್ಮ ಜೀವನ. ನಿಮ್ಮ ಆಯ್ಕೆ.">Your Life. Your Choice.</p>
+
+            <div class="pulse-box">
+              <span class="pulse-dot"></span>
+              <span data-en="Premium experience" data-kn="ಪ್ರಿಮಿಯಂ ಅನುಭವ">Premium experience</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="Unique interface" data-kn="ಅತ್ಯಾಕರ್ಷಕ ಮುನ್ನೆಲೆಯ">Unique interface</div>
+          <h2 data-en="Pastel elegance with premium black & gold" data-kn="ಪ್ಯಾಸ್ಟೆಲ್ ಅಗೌಚ ಮತ್ತು ಪ್ರಿಮಿಯಂ ಬ್ಲಾಕ್ & ಗೋಲ್ಡ್">Pastel elegance with premium black & gold</h2>
+          <p data-en="LIFORA is designed to feel premium, polished, and welcoming—blending soft pastel tones with luxury black and gold accents." data-kn="LIFORA ಪ್ರಿಮಿಯಂ, ಪೊರಕೆಮಾಡಿದ ಮತ್ತು ಸ್ವಾಗತಕರ ಅನುಭವವನ್ನು ನೀಡುತ್ತದೆ. ಹಗುರವಾದ ಪ್ಯಾಸ್ಟೆಲ್ ಬಣ್ಣಗಳು, ಕಪ್ಪು ಮತ್ತು ಗೋಲ್ಡ್ ಅಂಶಗಳೊಂದಿಗೆ ಸಮ್ಮಿಲನಗೊಂಡಿವೆ.">LIFORA is designed to feel premium, polished, and welcoming—blending soft pastel tones with luxury black and gold accents.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="card">
+            <div class="card-icon">✦</div>
+            <h3 data-en="Unique LIFORA Interface" data-kn="ಯೂನಿಕ್ LIFORA ಇಂಟರ್ಫೇಸ್">Unique LIFORA Interface</h3>
+            <p data-en="A premium look crafted with pastel shades, black luxury surfaces, and elegant gold highlights to create a memorable identity." data-kn="ಪ್ಯಾಸ್ಟೆಲ್ ಶೇಡ್ಸ್, ಬ್ಲಾಕ್ ಲಕ್ಸರಿ ಮೇಲ್ಮೈಗಳು ಮತ್ತು ಈಜಿತ ಗೋಲ್ಡ್ ಉದ್ದೀಪನಗಳೊಂದಿಗೆ ನವಿರಾದ ಗುರುತನ್ನು ನಿರ್ಮಿಸಲಾಗಿದೆ.">A premium look crafted with pastel shades, black luxury surfaces, and elegant gold highlights to create a memorable identity.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">◎</div>
+            <h3 data-en="Simple Experience" data-kn="ಸರಳ ಅನುಭವ">Simple Experience</h3>
+            <p data-en="Every interaction is clear and intuitive, helping users understand the app without confusion or overwhelm." data-kn="ಪ್ರತಿ ಸಂವಹನವು ಸ್ಪಷ್ಟ ಮತ್ತು ಸಹಜವಾಗಿರುವಂತೆ ಮಾಡಲಾಗಿದೆ. ಇದರಿಂದ ಬಳಕೆದಾರರು ಕಳೆದೆರಡು ತಲೆಕೆರೆಸಿ ಕೆಲಸ ಮಾಡಬೇಕಾಗುವುದಿಲ್ಲ.">Every interaction is clear and intuitive, helping users understand the app without confusion or overwhelm.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">▣</div>
+            <h3 data-en="Explore Section" data-kn="ಎಕ್ಸ್ಪ್ಲೋರ್ ವಿಭಾಗ">Explore Section</h3>
+            <p data-en="Users can discover the app’s major features with concise descriptions, practical details, and clear value propositions." data-kn="ಬಳಕೆದಾರರು ಆ್ಯಪ್‌ನ ಮುಖ್ಯ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಸಂಕ್ಷಿಪ್ತ ವಿವರಣೆ,实用 ಮಾಹಿತಿ ಮತ್ತು ಸ್ಪಷ್ಟ ಮೌಲ್ಯಗಳೊಂದಿಗೆ ತಿಳಿದುಕೊಳ್ಳಬಹುದು.">Users can discover the app’s major features with concise descriptions, practical details, and clear value propositions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="explore">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="Discover more" data-kn="ಹೆಚ್ಚು ತಿಳಿಯಿರಿ">Discover more</div>
+          <h2 data-en="Explore every feature in detail" data-kn="ಪ್ರತಿ ವೈಶಿಷ್ಟ್ಯವನ್ನು ವಿವರವಾಗಿ ಅನ್ವೇಷಿಸಿ">Explore every feature in detail</h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3 data-en="Smart onboarding" data-kn="ಸ್ಮಾರ್ಟ್ ಓನ್ಬೋರ್ಡಿಂಗ್">Smart onboarding</h3>
+            <p data-en="New users are guided through the app quickly, reducing friction and helping them get started with confidence." data-kn="ಹೊಸ ಬಳಕೆದಾರರಿಗೆ ಆ್ಯಪ್ ಅನ್ನು ಬೇಗವಾಗಿ ಪರಿಚಯಿಸಿ, ಅಡಚಣೆ ಕಡಿಮೆ ಮಾಡುತ್ತದೆ ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸದೊಂದಿಗೆ ಪ್ರಾರಂಭಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.">New users are guided through the app quickly, reducing friction and helping them get started with confidence.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3 data-en="Lifestyle features" data-kn="ಲೈಫ್ಸ್ಟೈಲ್ ವೈಶಿಷ್ಟ್ಯಗಳು">Lifestyle features</h3>
+            <p data-en="LIFORA is built to support varied everyday routines with thoughtful, practical, and accessible tools." data-kn="LIFORA ದೈನಂದಿನ ಜೀವನಕ್ಕೆ.databinding ದೃಷ್ಟಿಯಿಂದ, thoughtful practical tools ಗಳನ್ನು ಆಯೋಜಿಸಿದೆ.">LIFORA is built to support varied everyday routines with thoughtful, practical, and accessible tools.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3 data-en="User confidence" data-kn="ಬಳಕೆದಾರರ ನಂಬಿಕೆ">User confidence</h3>
+            <p data-en="Clear communication, modern design, and a streamlined experience build trust and improve engagement." data-kn="ಸ್ಪಷ್ಟ ಸಂವಹನ, ಆಧುನಿಕ ವಿನ್ಯಾಸ ಮತ್ತು ಸರಳ ಅನುಭವವು ನಂಬಿಕೆಯನ್ನು ಬೆಳೆಸಿ, ಭಾಗವಹಿಸುವಿಕೆಯನ್ನು ಹೆಚ್ಚಿಸುತ್ತದೆ.">Clear communication, modern design, and a streamlined experience build trust and improve engagement.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">04</div>
+            <h3 data-en="Premium branding" data-kn="ಪ್ರಿಮಿಯಂ ಬ್ರಾಂಡಿಂಗ್">Premium branding</h3>
+            <p data-en="The brand identity reflects quality, trust, and a modern identity that stands out in a competitive digital marketplace." data-kn="ಬ್ರಾಂಡ್ ಗುರುತು ನಿರಂಕುಶವಾಗಿ ಗುಣಮಟ್ಟ, ನಂಬಿಕೆ ಮತ್ತು ಆಧುನಿಕ ಗುರುತನ್ನು ಪ್ರತಿಬಿಂಬಿಸುತ್ತದೆ.">The brand identity reflects quality, trust, and a modern identity that stands out in a competitive digital marketplace.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">05</div>
+            <h3 data-en="Scalable growth" data-kn="ಸ್ಕೇಲಬಲ್ ಬೆಳವಣಿಗೆ">Scalable growth</h3>
+            <p data-en="The platform is designed for wider reach, continuous improvement, and future expansion without losing simplicity." data-kn="ಈ ಪ್ಲ್ಯಾಟ್ಫಾರ್ಮ್ ವಿಸ್ತರಿಸುವ, ಸುಧಾರಿಸುವ ಮತ್ತು ಭವಿಷ್ಯದಲ್ಲಿ ವಿಸ್ತರಿಸುವ ಉದ್ದೇಶದಿಂದ ರೂಪಿಸಲಾಗಿದೆ.">The platform is designed for wider reach, continuous improvement, and future expansion without losing simplicity.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">06</div>
+            <h3 data-en="Accessible support" data-kn="ಸಮರ್ಪಕ ಬೆಂಬಲ">Accessible support</h3>
+            <p data-en="The support and enquiry model helps users quickly ask questions and resolve concerns without friction." data-kn="ಸಹಾಯ ಮತ್ತು ಕೋರಿಕೆ ವ್ಯವಸ್ಥೆ ಬಳಕೆದಾರರಿಗೆ ತಕ್ಷಣದ ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರಶ್ನಿಸಲು ಮತ್ತು ಸಮಸ್ಯೆಗಳನ್ನು ಪರಿಹರಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ.">The support and enquiry model helps users quickly ask questions and resolve concerns without friction.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="How it works" data-kn="ಇದನ್ನು ಹೇಗೆ ಬಳಸುವುದು">How it works</div>
+          <h2 data-en="A simple experience for every user" data-kn="ಪ್ರತಿಯೊಬ್ಬ ಬಳಕೆದಾರರಿಗೆ ಸರಳ ಅನುಭವ">A simple experience for every user</h2>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-box">
+            <div class="number">1</div>
+            <h3 data-en="Discover" data-kn="ಅನ್ವೇಷಿಸಿ">Discover</h3>
+            <p class="note" data-en="Explore the app and its key features in a clean and welcoming layout." data-kn="ಅಪ್ಲಿಕೇಶನ್ ಮತ್ತು ಅದರ ಮುಖ್ಯ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಸ್ವಚ್ಛವಾದ ಮತ್ತು ಸ್ವಾಗತಕರ ವಿನ್ಯಾಸದಲ್ಲಿ ಅನ್ವೇಷಿಸಿ.">Explore the app and its key features in a clean and welcoming layout.</p>
+          </div>
+
+          <div class="step-box">
+            <div class="number">2</div>
+            <h3 data-en="Understand" data-kn="ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ">Understand</h3>
+            <p class="note" data-en="Read the feature descriptions and see how each section supports real-life use." data-kn="ವೈಶಿಷ್ಟ್ಯಗಳ ವಿವರಣೆಗಳ পড়ಿ ಮತ್ತು ಪ್ರತಿಯೊಂದು ವಿಭಾಗದ ಉಪಯೋಗವನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ.">Read the feature descriptions and see how each section supports real-life use.</p>
+          </div>
+
+          <div class="step-box">
+            <div class="number">3</div>
+            <h3 data-en="Take action" data-kn="ಕ್ರಿಯೆಗೆ ಮುಂದುವರಿ">Take action</h3>
+            <p class="note" data-en="Download the app, start using it, and move forward with confidence." data-kn="ಆಪ್ಗೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ, ಬಳಸಲು ಪ್ರಾರಂಭಿಸಿ ಮತ್ತು ನಂಬಿಕೆಯೊಂದಿಗೆ ಮುಂದುವರಿಯಿರಿ.">Download the app, start using it, and move forward with confidence.</p>
+          </div>
+
+          <div class="step-box">
+            <div class="number">4</div>
+            <h3 data-en="Get support" data-kn="ಸಹಾಯ ಪಡೆಯಿರಿ">Get support</h3>
+            <p class="note" data-en="Ask questions and get help whenever you need it via the support and enquiry section." data-kn="ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ ಮತ್ತು ಸಹಾಯವನ್ನು ಪಡೆಯಿರಿ.">Ask questions and get help whenever you need it via the support and enquiry section.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download">
+      <div class="wrap">
+        <div class="cta-panel">
+          <div>
+            <div class="eyebrow" data-en="Get started" data-kn="ಪ್ರಾರಂಭಿಸಿ">Get started</div>
+            <h2 data-en="Take LIFORA with you." data-kn="LIFORA ಅನ್ನು ನಿಮ್ಮೊಂದಿಗೆ ಕೊಂಡು ಹೋಗಿ.">Take LIFORA with you.</h2>
+            <p data-en="Start your journey with a premium digital experience designed to feel simple, practical, and memorable." data-kn="ಸರಳ, ಪ್ರಾಯೋಗಿಕ ಮತ್ತು ನೆನಪ retaining ಪ್ರಿಮಿಯಂ ಡಿಜಿಟಲ್ ಅನುಭವದೊಂದಿಗೆ ನಿಮ್ಮ ಪ್ರಯಾಣವನ್ನು ಪ್ರಾರಂಭಿಸಿ.">Start your journey with a premium digital experience designed to feel simple, practical, and memorable.</p>
+          </div>
+
+          <div class="tags">
+            <span class="tag" data-en="Android app" data-kn="ಆಂಡ್ರಾಯ್ಡ್ ಆ್ಯಪ್">Android app</span>
+            <span class="tag" data-en="Premium UI" data-kn="ಪ್ರಿಮಿಯಂ UI">Premium UI</span>
+            <span class="tag" data-en="Fast setup" data-kn="ತ್ವರಿತ ಸ್ಥಾಪನೆ">Fast setup</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="Support" data-kn="ಸಹಾಯ">Support</div>
+          <h2 data-en="We’re here to help" data-kn="ನಿಮ್ಮ ಸಹಾಯಕ್ಕೆ ನಾವು ಇಲ್ಲಿದ್ದೇವೆ">We’re here to help</h2>
+          <p data-en="Find quick answers, useful guidance, and a direct way to contact the team for support." data-kn="ತ್ವರಿತ ಉತ್ತರಗಳು, ಉಪಯುಕ್ತ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ತಂಡದೊಂದಿಗೆ ಸಂಪರ್ಕಕ್ಕೆ ಸಹಾಯ ಪಡೆಯಿರಿ.">Find quick answers, useful guidance, and a direct way to contact the team for support.</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="info-box">
+            <h3 data-en="Frequently asked questions" data-kn="ಸಾಮಾನ್ಯ ಪ್ರಶ್ನೆಗಳು">Frequently asked questions</h3>
+            <ul class="support-list">
+              <li data-en="How do I download LIFORA?" data-kn="LIFORA ಅನ್ನು ಹೇಗೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡುವುದು?">How do I download LIFORA?</li>
+              <li data-en="Is the app easy for first-time users?" data-kn="ಮೊದಲ ಬಾರಿಗೆ ಬಳಸುವವರಿಗೆ ಇದು ಸಾಕಷ್ಟು ಸುಲಭವೇ?">Is the app easy for first-time users?</li>
+              <li data-en="How can I contact the support team?" data-kn="ಸಹಾಯ ತಂಡವನ್ನು ಹೇಗೆ ಸಂಪರ್ಕಿಸುವುದು?">How can I contact the support team?</li>
+              <li data-en="Do you provide privacy and legal information?" data-kn="ಗೌಪ್ಯತೆ ಮತ್ತು ಕಾನೂನು ಮಾಹಿತಿ ನೀಡುತ್ತೀರಾ?">Do you provide privacy and legal information?</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h3 data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</h3>
+            <p data-en="Email us for assistance, project discussions, or general enquiries: contact@vrtechsolutions24.in" data-kn="ಸಹಾಯ, ಪಾಲುದಾರಿಕೆ ಮತ್ತು ಸಾಮಾನ್ಯ ಪ್ರಶ್ನೆಗಳಿಗೆ ಇಮೇಲ್ ಮಾಡಿ: contact@vrtechsolutions24.in">Email us for assistance, project discussions, or general enquiries: contact@vrtechsolutions24.in</p>
+            <br />
+            <p data-en="Powered by Vidya Rahul Tech Solutions." data-kn="Vidya Rahul Tech Solutions ನಿಂದ ಪವರ್ಡ್ ಮಾಡಲಾಗಿದೆ.">Powered by Vidya Rahul Tech Solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mission">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="Our purpose" data-kn="ನಮ್ಮ ಉದ್ದೇಶ">Our purpose</div>
+          <h2 data-en="Mission & Vision" data-kn="ಮಿಷನ್ & ವಿಷನ್">Mission & Vision</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="mission-box">
+            <h3 data-en="Mission" data-kn="ಮಿಷನ್">Mission</h3>
+            <p data-en="To create a digital experience that blends practicality, premium design, and user confidence—making everyday interactions more meaningful and easy to navigate." data-kn="ಜೀವನದ ದೈನಂದಿನ ಸಂವಹನಗಳನ್ನು ಹೆಚ್ಚು ಅರ್ಥಪೂರ್ಣ ಮತ್ತು ಸುಲಭವಾಗಿ ಮಾಡಿಕೊಳ್ಳುವಂತೆ, ಪ್ರಾಯೋಗಿಕತೆ, ಪ್ರಿಮಿಯಂ ವಿನ್ಯಾಸ ಮತ್ತು ಬಳಕೆದಾರ ನಂಬಿಕೆಯನ್ನು ಒಟ್ಟಿಗೆ ಬೆರೆಸಿ ಡಿಜಿಟಲ್ ಅನುಭವವನ್ನು ರಚಿಸುವುದು ನಮ್ಮ ಮಿಷನ್.">To create a digital experience that blends practicality, premium design, and user confidence—making everyday interactions more meaningful and easy to navigate.</p>
+          </div>
+
+          <div class="mission-box">
+            <h3 data-en="Vision" data-kn="ವಿಷನ್">Vision</h3>
+            <p data-en="To grow LIFORA into a trusted digital platform that reaches ambitious milestones, empowers users, and builds a strong future-ready brand." data-kn="LIFORA ಅನ್ನು ವಿಶ್ವಾಸಮಯ ಡಿಜಿಟಲ್ ಪ್ಲ್ಯಾಟ್ಫಾರ್ಮ್‌ವಾಗಿ ಬೆಳೆಸುವುದು, ದೊಡ್ಡ ಗುರಿಗಳನ್ನು ತಲುಪಿಸುವುದು, ಬಳಕೆದಾರರಿಗೆ ಶಕ್ತಿಕರವಾಗುವುದು ಮತ್ತು ಭವಿಷ್ಯದ ವರ್ತಮಾನಕ್ಕೆ ಸಿದ್ಧವಾಗಿರುವ ಬ್ರಾಂಡ್‌ನ್ನು ನಿರ್ಮಿಸುವುದು ನಮ್ಮ ವಿಷನ್.">To grow LIFORA into a trusted digital platform that reaches ambitious milestones, empowers users, and builds a strong future-ready brand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="stats-grid">
+          <div class="card">
+            <strong>10K+</strong>
+            <p data-en="Target users" data-kn="ಗುರಿ ಬಳಕೆದಾರರು">Target users</p>
+          </div>
+          <div class="card">
+            <strong>24/7</strong>
+            <p data-en="Support access" data-kn="ಸಹಾಯ ಲಭ್ಯತೆ">Support access</p>
+          </div>
+          <div class="card">
+            <strong>1</strong>
+            <p data-en="Vision mindset" data-kn="ವಿಷನ್ ಮನೋಭಾವ">Vision mindset</p>
+          </div>
+          <div class="card">
+            <strong>∞</strong>
+            <p data-en="Growth potential" data-kn="ಬೆಳವಣಿಗೆ ಸಂಭಾವ್ಯತೆ">Growth potential</p>
+          </div>
+        </div>
+        <div class="section-head" style="margin-top:2rem; margin-bottom:0;">
+          <p class="note" data-en="Our goal is to reach 10,000+ users — this reflects our future target, not a claim of current user count." data-kn="ನಮ್ಮ ಗುರಿ 10,000+ ಬಳಕೆದಾರರನ್ನು ತಲುಪುವುದಾಗಿದೆ — ಇದು ನಮ್ಮ ಭವಿಷ್ಯದ ಗುರಿಯನ್ನು ಸೂಚಿಸುತ್ತದೆ, ಇದನ್ನು ಪ್ರಸ್ತುತ ಬಳಕೆದಾರರ ಪ್ರಮಾಣವಾಗಿ ಉಲ್ಲೇಖಿಸುವುದಿಲ್ಲ.">Our goal is to reach 10,000+ users — this reflects our future target, not a claim of current user count.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="founder">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="Founder message" data-kn="ಮೂಲಸ್ಥಾಪಕ ಸಂದೇಶ">Founder message</div>
+          <h2 data-en="From Vidya Rahul" data-kn="Vidya Rahul ಅವರಿಂದ">From Vidya Rahul</h2>
+        </div>
+
+        <div class="quote">
+          <p data-en="“LIFORA was created to make life feel more organized, more intentional, and more confident. We believe that a better digital experience should feel smooth, trusted, and truly useful for everyday people.”" data-kn="“LIFORA ಅನ್ನು ಮತ್ತಷ್ಟು ವ್ಯವಸ್ಥಿತ, ಉದ್ದೇಶಪೂರ್ವಕ ಮತ್ತು ಆತ್ಮವಿಶ್ವಾಸದಿಂದ ಜೀವನವನ್ನು ಅನುಭವಿಸುವಂತೆ ತಯಾರಿಸಲಾಗಿದೆ. ಉತ್ತಮ ಡಿಜಿಟಲ್ ಅನುಭವವು ದೈನಂದಿನ ಜನರಿಗೆ ಹಿಡಿತ, ನಂಬಿಕೆ ಮತ್ತು ಉಪಯೋಗವನ್ನು ನೀಡಬೇಕು ಎಂದು ನಾವು ನಂಬುತ್ತೇವೆ.”">“LIFORA was created to make life feel more organized, more intentional, and more confident. We believe that a better digital experience should feel smooth, trusted, and truly useful for everyday people.”</p>
+          <br />
+          <strong data-en="— Vidya Rahul" data-kn="— Vidya Rahul">— Vidya Rahul</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow" data-en="Enquiry" data-kn="ವಿಚಾರಣೆ">Enquiry</div>
+          <h2 data-en="Send us a message" data-kn="ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ">Send us a message</h2>
+        </div>
+
+        <div class="grid-2">
+          <form id="enquiry-form">
+            <div class="field-row">
+              <input type="text" name="name" placeholder="Name" aria-label="Name" required />
+              <input type="email" name="email" placeholder="Email" aria-label="Email" required />
+            </div>
+
+            <input type="text" name="subject" placeholder="Subject" aria-label="Subject" required />
+            <textarea name="message" placeholder="Your message" aria-label="Your message" required></textarea>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary" data-en="Send enquiry" data-kn="ವಿಚಾರಣೆ ಕಳುಹಿಸಿ">Send enquiry</button>
+              <span class="form-note" data-en="We usually reply within 1–2 business days." data-kn="ನಾವು ಸಾಮಾನ್ಯವಾಗಿ 1–2 ವ್ಯವಹಾರ ದಿನಗಳಲ್ಲಿ ಉತ್ತರಿಸುತ್ತೇವೆ.">We usually reply within 1–2 business days.</span>
+            </div>
+          </form>
+
+          <div class="info-box">
+            <h3 data-en="Need help?" data-kn="ಸಹಾಯ ಬೇಕಿದೆಯೇ?">Need help?</h3>
+            <p data-en="Reach out with your questions, feedback, or partnership ideas. We are happy to connect and support you." data-kn="ನಿಮ್ಮ ಪ್ರಶ್ನೆಗಳು, ಪ್ರತಿಕ್ರಿಯೆಗಳು ಅಥವಾ ಪಾಲುದಾರಿಕೆ ಆಲೋಚನೆಗಳನ್ನು ಕಳುಹಿಸಿ. ನಾವು ನಿಮ್ಮೊಂದಿಗೆ ಸಂಪರ್ಕದಿಂದ ಸಹಾಯ ಮಾಡಲು ಸಂತೋಷಿಸುತ್ತೇವೆ.">Reach out with your questions, feedback, or partnership ideas. We are happy to connect and support you.</p>
+            <br />
+            <p><strong data-en="Email" data-kn="ಇಮೇಲ್">Email</strong>: <a href="mailto:contact@vrtechsolutions24.in" style="color:var(--gold-soft);">contact@vrtechsolutions24.in</a></p>
+            <br />
+            <p><strong data-en="Legal" data-kn="ಕಾನೂನು">Legal</strong>: <a href="privacy.html" style="color:var(--gold-soft);">Privacy Policy</a> | <a href="terms.html" style="color:var(--gold-soft);">Terms & Conditions</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        © <span id="year"></span> LIFORA — <span data-en="All rights reserved." data-kn="ಎಲ್ಲ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.">All rights reserved.</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" data-en="Privacy Policy" data-kn="ಗೌಪ್ಯತೆ ನೀತಿ">Privacy Policy</a>
+        <a href="terms.html" data-en="Terms & Conditions" data-kn="ನಿಯಮ ಮತ್ತು ನಿರ್ಬಂಧಗಳು">Terms & Conditions</a>
+        <a href="#contact" data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const picker = document.getElementById('lang');
+    function applyLanguage(lang){
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = lang === 'kn' ? el.dataset.kn : el.dataset.en;
+      });
+      document.querySelectorAll('[data-en-html]').forEach(el => {
+        el.innerHTML = lang === 'kn' ? el.dataset.knHtml : el.dataset.enHtml;
+      });
+      try { localStorage.setItem('lifora-language', lang); } catch (e) {}
+    }
+
+    let currentLang = 'en';
+    try {
+      currentLang = localStorage.getItem('lifora-language') || 'en';
+    } catch (e) {}
+
+    picker.value = currentLang;
+    applyLanguage(currentLang);
+    picker.addEventListener('change', (event) => applyLanguage(event.target.value));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('enquiry-form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const button = form.querySelector('button[type="submit"]');
+      const originalText = button.textContent;
+      button.textContent = 'Sent';
+      button.disabled = true;
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.disabled = false;
+        form.reset();
+      }, 1800);
+    });
+  </script>
+</body>
+</html>
