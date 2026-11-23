@@ -1,0 +1,10 @@
+{
+  "appName": "LIFORA",
+  "packageName": "com.vrtechsolutions.lifora",
+  "latestVersion": "1.0.0",
+  "versionCode": 1,
+  "downloadReady": false,
+  "apkUrl": "https://lifora.vrtechsolutions24.in/lifora.apk",
+  "releaseNotes": "LIFORA update service is ready. A new signed update will be announced here when published.",
+  "updatedAt": "2026-11-23"
+}
